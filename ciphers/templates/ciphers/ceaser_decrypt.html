@@ -1,0 +1,66 @@
+<!-- extend base template -->
+{% extends 'base.html' %}
+<!-- extend base template -->
+
+<!-- load static -->
+{% load static %}
+<!-- load static -->
+
+<!-- title -->
+
+<!-- extend block -->
+{% block title %} Ceaser Encryption {% endblock %}
+<!-- extend block -->
+
+<!-- title -->
+
+<!-- body -->
+
+<!-- extend block -->
+{% block body %}
+
+<div class="section">
+  <div class="tabs is-centered">
+    <ul>
+      <li>
+        <a href="{% url 'ceaser_encrypt' %}">Ceaser Encrypt</a>
+      </li>
+      <li class="is-active">
+        <a href="{% url 'ceaser_decrypt' %}">Ceaser Decrypt</a>
+      </li>
+    </ul>
+  </div>
+  <p class="title has-text-centered">Ceaser Cipher</p>
+  <div class="box">
+    <form action="{% url 'ceaser_decrypt_response' %}" method="get">
+      <div class="field">
+        <label for="message" class="label">Message</label>
+        <div class="control">
+          <textarea
+            name="message"
+            id="message"
+            class="textarea"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+      <div class="field">
+        <label for="plaintext" class="label">Key</label>
+        <div class="control">
+          <input type="number" class="input" name="key" id="key" />
+        </div>
+      </div>
+      <div class="div">
+        <div class="control btn-container">
+          <button type="submit" class="button is-success">Decrypt</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+<!-- extend block -->
+
+<!-- body -->

@@ -1,0 +1,16 @@
+body,
+html {
+  height: 100vh !important;
+  width: 100% !important;
+  background-color: azure !important;
+}
+
+.box {
+  width: 50% !important;
+  margin: auto !important;
+}
+
+.btn-container {
+  width: fit-content !important;
+  margin: auto !important;
+}
