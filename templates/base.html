@@ -15,14 +15,30 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <!-- bulma -->
-    <title>Cryptography | {% block title %} Home {% endblock %}</title>
+    <title>Personal App Backend</title>
   </head>
   <body>
+    <!--  -->
     <div class="main-body">
       {% block body %}
       <!--  -->
       {% endblock %}
     </div>
+
+    <footer class="footer has-background-dark has-text-light">
+      <div class="content has-text-centered">
+        <p>
+          Made with <i class="bi bi-hearts has-text-danger-dark"></i> using
+          <strong class="has-text-success">Django</strong>,
+          <strong class="has-text-danger">Django-REST-Framework</strong>, and
+          <strong class="has-text-info">Vue.Js</strong>
+        </p>
+        <p>
+          <strong>&#169; 2022</strong>
+          <a href="#" class="has-text-light">Freedom Loisa</a>
+        </p>
+      </div>
+    </footer>
+    <!--  -->
   </body>
-  <script src="{% static 'js/main.js' %}"></script>
 </html>
