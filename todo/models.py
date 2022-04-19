@@ -1,13 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
-from slugger import AutoSlugField
 
 # Create your models here.
 class Tag(models.Model):
 
     tag = models.CharField(max_length=200, unique=True)
-
-    slug = AutoSlugField(populate_from='tag')
 
     def __str__(self) -> str:
         
@@ -18,8 +15,6 @@ class Todo(models.Model):
     owner = models.ForeignKey(User, related_name='todo_list', on_delete=models.CASCADE)
 
     title = models.CharField(max_length=225, unique=True)
-
-    slug = AutoSlugField(populate_from='title')
 
     details = models.CharField(max_length=225)
 
