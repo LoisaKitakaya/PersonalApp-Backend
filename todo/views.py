@@ -1,25 +1,46 @@
-from django.shortcuts import render
 from todo.models import Tag, Todo
 from todo.serializers import TagSerializer, TodoSerializer
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from rest_framework import permissions, viewsets
+from django.contrib.auth.models import User
 
 # Create your views here.
-@api_view(['GET'])
-def view_tags(request):
 
-    tags = Tag.objects.all()
+# actual classes used in frontend
 
-    serializer = TagSerializer(tags, many=True)
+class TagViewset(viewsets.ModelViewSet):
 
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    permission_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        permissions.IsAdminUser
+    ]
 
-@api_view(['GET'])
-def view_todo(request):
+    queryset = Tag.objects.all()
 
-    todo = Todo.objects.all()
+    serializer_class = TagSerializer
 
-    serializer = TodoSerializer(todo, many=True)
+    def get_queryset(self):
 
-    return Response(serializer.data, status=status.HTTP_200_OK)
+        return self.queryset
+
+class TodoViewset(viewsets.ModelViewSet):
+
+    permissions_classes = [
+        permissions.IsAuthenticatedOrReadOnly,
+        permissions.IsAdminUser
+    ]
+
+    queryset = Todo.objects.all()
+
+    serializer_class = TodoSerializer
+
+    def get_queryset(self):
+        
+        user = self.request.user
+
+        return self.queryset.filter(owner=user)
+
+    def perform_create(self, serializer):
+
+        user = self.request.user
+        
+        serializer.save(owner = user)

@@ -1,7 +1,17 @@
-from django.urls import path
+from django.urls import include, path
 from todo import views
+from rest_framework import routers
+
+# routers
+
+router = routers.DefaultRouter()
+
+router.register('tags', views.TagViewset, basename='tags')
+
+router.register('todo', views.TodoViewset, basename='todo')
+
+# urls
 
 urlpatterns = [
-    path('tags/', views.view_tags),
-    path('todo/', views.view_todo),
+    path('', include(router.urls)),
 ]
