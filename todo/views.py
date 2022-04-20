@@ -1,18 +1,12 @@
 from todo.models import Tag, Todo
 from todo.serializers import TagSerializer, TodoSerializer
-from rest_framework import permissions, viewsets
-from django.contrib.auth.models import User
+from rest_framework import viewsets
 
 # Create your views here.
 
 # actual classes used in frontend
 
 class TagViewset(viewsets.ModelViewSet):
-
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        permissions.IsAdminUser
-    ]
 
     queryset = Tag.objects.all()
 
@@ -23,11 +17,6 @@ class TagViewset(viewsets.ModelViewSet):
         return self.queryset
 
 class TodoViewset(viewsets.ModelViewSet):
-
-    permissions_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        permissions.IsAdminUser
-    ]
 
     queryset = Todo.objects.all()
 

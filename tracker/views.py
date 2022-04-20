@@ -1,17 +1,12 @@
 from tracker.models import Habit, HabitLog
 from tracker.serializers import HabitSerializer, HabitLogSerializer
-from rest_framework import permissions, viewsets
+from rest_framework import viewsets
 from django.contrib.auth.models import User
 
 # Create your views here.
 
 # tracker class views
 class HabitView(viewsets.ModelViewSet):
-
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        permissions.IsAdminUser
-    ]
 
     queryset = Habit.objects.all()
 
@@ -30,11 +25,6 @@ class HabitView(viewsets.ModelViewSet):
         serializer.save(owner = user)
 
 class HabitLogView(viewsets.ModelViewSet):
-
-    permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        permissions.IsAdminUser
-    ]
 
     queryset = HabitLog.objects.all()
 

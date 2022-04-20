@@ -21,5 +21,4 @@ urlpatterns = [
     path('', include('core.urls')),
     path('todo-api/', include('todo.urls')),
     path('tracker-api/', include('tracker.urls')),
-    path('test-api-auth/', include('rest_framework.urls')),
 ]
