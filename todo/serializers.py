@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from todo.models import Tag, Todo
-from django.contrib.auth.models import User
 
 # serializer classes
 

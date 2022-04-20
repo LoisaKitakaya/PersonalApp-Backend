@@ -8,13 +8,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- my css -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <!-- my css -->
+
     <!-- bulma -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <!-- bulma -->
+    <!-- bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
     <title>Personal App Backend</title>
   </head>
   <body>
@@ -26,21 +37,45 @@
     </div>
 
     <footer class="footer has-background-dark has-text-light">
-      <div class="content has-text-centered level">
-        <p class="level-left">
-          |<strong class="has-text-success level-item">Django</strong> |
-          <strong class="has-text-danger level-item"
-            >Django-REST-Framework</strong
-          >
-          | <strong class="has-text-info level-item">Vue.Js</strong>
-        </p>
-        <p class="level-left">
-          |
-          <a href="#" class="has-text-info is-underlined level-item"
-            >Freedom Loisa</a
-          >
-        </p>
-      </div>
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-success is-underlined">Django</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-light"><i class="bi bi-plus-lg"></i></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-danger is-underlined">Django-Rest-Framework</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-light"><i class="bi bi-plus-lg"></i></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-info is-underlined">Vue.Js</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-light"><i class="bi bi-arrow-right"></i></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="has-text-light is-underlined">
+              <a href="#" class="has-text-light">Personal App</a>
+            </p>
+          </div>
+        </div>
+      </nav>
     </footer>
     <!--  -->
   </body>
