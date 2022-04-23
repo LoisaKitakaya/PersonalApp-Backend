@@ -6,8 +6,6 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 
-router.register('tags', views.TagViewset, basename='tags')
-
 router.register('todo', views.TodoViewset, basename='todo')
 
 # urls

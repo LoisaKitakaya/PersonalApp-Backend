@@ -1,20 +1,10 @@
-from todo.models import Tag, Todo
-from todo.serializers import TagSerializer, TodoSerializer
+from todo.models import Todo
+from todo.serializers import TodoSerializer
 from rest_framework import viewsets
 
 # Create your views here.
 
 # actual classes used in frontend
-
-class TagViewset(viewsets.ModelViewSet):
-
-    queryset = Tag.objects.all()
-
-    serializer_class = TagSerializer
-
-    def get_queryset(self):
-
-        return self.queryset
 
 class TodoViewset(viewsets.ModelViewSet):
 
