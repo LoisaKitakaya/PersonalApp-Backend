@@ -12,4 +12,6 @@ router.register('todo', views.TodoViewset, basename='todo')
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('filter-complete/', views.filter_by_complete, name='filter_complete'),
+    path('filter-incomplete/', views.filter_by_incomplete, name='filter_incomplete'),
 ]

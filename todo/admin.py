@@ -10,11 +10,13 @@ class TodoView(admin.ModelAdmin):
         'owner',
         'title',
         'completed',
+        'created_at',
     )
 
     list_filter = (
         'owner',
         'completed',
+        'created_at',
     )
 
     search_fields = (

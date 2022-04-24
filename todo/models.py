@@ -24,6 +24,12 @@ class Todo(models.Model):
 
     tags = models.CharField(max_length=50, choices=CHOICES_TAGS)
 
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+
+        ordering = ['-created_at']
+
     def __str__(self) -> str:
         
         return self.title
