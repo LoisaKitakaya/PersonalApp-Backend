@@ -154,10 +154,12 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
+    'https://loisakitakaya.github.io/PersonalApp-Frontend',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8080',
+    'https://loisakitakaya.github.io/PersonalApp-Frontend',
 ]
 
 CORS_ALLOW_METHODS = list(default_methods)
