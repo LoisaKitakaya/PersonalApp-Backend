@@ -41,9 +41,7 @@ class HabitLog(models.Model):
 
     def __str__(self) -> str:
 
-        return self.date
-        
-        # f"{self.owner.username}'s {self.habit.title} on {self.date}"
+        return str(self.date)
 
     class Meta:
 

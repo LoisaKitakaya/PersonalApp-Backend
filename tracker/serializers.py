@@ -12,6 +12,7 @@ class HabitSerializer(serializers.ModelSerializer):
         model = Habit
 
         fields = [
+            'id',
             'created_at',
             'updated_at',
             'owner',
@@ -32,6 +33,7 @@ class HabitLogSerializer(serializers.ModelSerializer):
         model = HabitLog
 
         fields = [
+            'id',
             'created_at',
             'updated_at',
             'achievement',

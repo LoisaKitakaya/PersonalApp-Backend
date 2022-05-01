@@ -40,4 +40,6 @@ class HabitLogView(viewsets.ModelViewSet):
         
         user = self.request.user
 
-        serializer.save(owner = user)
+        habit = self.request.data['habit']
+
+        serializer.save(owner = user, habit_id = habit)
