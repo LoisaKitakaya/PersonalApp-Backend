@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # processing for static files
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'backends.urls'
@@ -165,3 +167,7 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ALLOW_METHODS = list(default_methods)
 
 CORS_ALLOW_HEADERS = list(default_headers)
+
+# static storage
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
